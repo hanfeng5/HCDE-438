@@ -1,5 +1,5 @@
 .picture {
-  width: 300px;
+  width: 250px;
   border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
@@ -17,6 +17,14 @@
   width: 80%;
   margin: auto;
   gap: 12px;
+  text-align: justify;
+  font-size: small;
+}
+
+.image-title {
+  text-align: center;
+  font-family: monospace;
+  font-size: large;
 }
 
 body {
