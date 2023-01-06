@@ -10,3 +10,24 @@ body {
   margin: auto;
   margin-top: 5rem;
 }
+nav {
+  display: flex;
+  /* gap: 0.5rem; */
+}
+
+nav a {
+  flex: 1;
+  background-color: #333;
+  color: #fff;
+  border: 1px dashed;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #fff;
+  color: #333;
+}
