@@ -13,7 +13,27 @@
         <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
         <a href="/writeup/writeup.html">Writeup</a>
     </nav>
-    <div>
-        <h1>This is the Cheat Sheet!</h1>
-    </div>
+    
+    <body>
+        <div>
+            <h1>This is the Cheat Sheet!</h1>
+        </div>
+        <div class="recipe-container">
+            <h2>CSS Styles:</h2>
+            <ul>
+                <li>
+                    <b>justify-content: center</b> -- This will align the contents, such as a group of pictures, to the middle of the page, or the container if specified.
+                </li>
+                <li>
+                    <b> nav a {transition: all 0.5s ease-out;} + </b><b>nav a:hover, nav a:focus {background-color: #FA9500;color: #333;}</b> -- First, this command will only apply to the anchor elements within the nav property. 
+                    Then, it is saying when the user hover the mouse, or focus on the element, the CSS styles will be having "these" colors. But first, there need to be a "transition" declaration within the nav a styles to indicate
+                    the desired effect in changing between two states when the user trigger this CSS transition. 
+                </li>
+                <li>
+                    <b>  font-family: 'Fredoka One', cursive;</b> -- This specifies the font that will be used within the corresponding container. The ones with "" is usually the special font that may require
+                    additional installation. It is usually followed by a "basic" font to tell the website to dispaly this alternative solution if the previous desired font is not available on user's side. 
+                </li>
+            </ul>
+        </div>
+    </body>
 </html>

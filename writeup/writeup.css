@@ -1,10 +1,53 @@
-body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+  body {
+    background-color: antiquewhite;;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: black;
+  }
+  .picture {
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    object-fit: cover;
+    aspect-ratio: 1;
   }
 
+  .picture:hover {
+    filter: brightness(80%)
+  }
 
+  h1{
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 50px;
+  }
+  h2,h3,h4 {
+    font-family: 'Fredoka One', cursive;
+    
+  }
+
+  .image-title {
+  text-align: center;
+  font-family: monospace;
+  font-size: large;
+  margin: 0.5rem;
+}
+  .picture-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    gap: 12px;
+    text-align: justify;
+    font-size: small;
+    justify-content: center;
+
+  }
+  .page-container {
+    width: 80%;
+    margin-top: 5rem;
+    margin: auto;
+  }
 nav {
     display: flex;
     /* gap: 0.5rem; */
@@ -22,8 +65,23 @@ nav a {
     font-size: x-large;
   }
   
-nav a:hover,
-nav a:focus {
-    background-color: #fff;
+  nav a {
+    flex: 1;
+    background-color: #3D5A80;
+    color: #fff;
+    border: 1px none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: x-large;
+    /* opacity: 0.6; */
+  }
+  
+  nav a:hover,
+  nav a:focus {
+    background-color: #FA9500;
     color: #333;
-}
+    opacity: 1;
+  }

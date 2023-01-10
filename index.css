@@ -19,12 +19,14 @@
   gap: 12px;
   text-align: justify;
   font-size: small;
+  justify-content: center;
 }
 
 .image-title {
   text-align: center;
   font-family: monospace;
   font-size: large;
+  margin: 0.5rem;
 }
 
 body {

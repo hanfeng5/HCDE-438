@@ -1,15 +1,16 @@
 html,
-body {
-  font-family: sans-serif;
-  background-color: black;
-  color: white;
-}
+  body {
+    background-color: antiquewhite;;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: black;
+  }
 
 .recipe-container {
   width: 80%;
   margin: auto;
   margin-top: 5rem;
 }
+
 nav {
   display: flex;
   /* gap: 0.5rem; */
@@ -26,8 +27,27 @@ nav a {
   transition: all 0.5s ease-out;
 }
 
+nav a {
+  flex: 1;
+  background-color: #3D5A80;
+  color: #fff;
+  border: 1px none;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: x-large;
+  /* opacity: 0.6; */
+}
+
 nav a:hover,
 nav a:focus {
-  background-color: #fff;
+  background-color: #FA9500;
   color: #333;
+  opacity: 1;
 }
+
+h1,h2,h3,h4 {
+    font-family: 'Fredoka One', cursive;
+  }
