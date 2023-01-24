@@ -28,9 +28,20 @@ body {
   .list_picture{
     width: 750px;
     cursor: pointer;
+    object-fit: 
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+    margin: 1rem
+  }
+
+  .list_picture_big{
+    /* width: 750px; */
+    width: 1200px;
+    cursor: pointer;
     object-fit:
     aspect-ratio: 1;
     margin-bottom: 1rem;
+    margin: 1rem
   }
 
   h1{

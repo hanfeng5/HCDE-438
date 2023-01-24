@@ -5,11 +5,105 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-      </head>
-      <nav>
+        <meta charset="UTF-8">
+    </head>
+    <nav>
         <a href="/index.html">Projects</a>
         <a href="/bio/bio.html">About</a>
         <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
         <a href="/writeup/writeup.html">Writeup</a>
     </nav>
+
+    <body>
+        <div class="recipe-container">
+            <h1>Browser Extension Writeup &#128421</h1>
+            <h2>Overview and Usage</h2>
+            <p>
+                The core functionality of my browser extension is to help the users to make a decision when they come across different options as they browse through the websites. For example, this extension would be helful
+                when the users are debating which color to choose when they are online shopping, if they should go to their favorite restaurant tonight instead of the weekend, and so much more. <br><br>
+                This extension is being stored on the GitHub repository <a href="https://github.com/hanfeng5/browser-extensions"> browser-extensions </a>. Inside the repository, there is the folder "decision-maker", which
+                could be loaded directly into Google Chrome as unpacked extension.
+                <div>
+                    <img
+                    class="list_picture_big"
+                    src="/Images/mp1/mp1 demo.mov">
+                    <div class="image-title">Demo of the Extension</div>
+                </div>
+                <br>
+            </p>
+            <h2>Development Process</h2>
+            <ol>
+                <li>
+                    <div>
+                        <p>
+                            First, I have brainstormed the abstract interface in my mind and looked over all the provided examples to see if I can modify the existing code to achieve my goal. Soon, I decided to modify the code from the
+                            "blocker" extension to create my own extension. My first step is to modify the pop up window so that i can implement the two differet type of decision making mechanisms. Additionally, I have taken out 
+                            the check box to show the block, This step is mostly commneting out code and adjusting the existing content into my project's context.
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp1/In progress 0.png">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Then, I have started to write the Javascript for the decision maker functionality. With two decision making mechanisms, I have wrote two sets of the algorithm to make the corresponding decision. However, the block
+                            from the original blocker extension still even though the decision making mechanisms worked perfectly. This brings me to some debugging sections and explore the backend of stuff
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp1/In progress 1.png">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            This is the debugging step. I have been spending a lot of time to learn about eventListenr and all other interactive command in between the popup.js and content.js files. Then, I have successfully taken out the
+                            block from the previous blocker extension and set up the extension to listen for user's click instead of directly give decisions. 
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp1/In progress 2.png">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Finally, I have made the pop up window a bit more pretty with some added font style and special button style. This only applies to the style changes in the extension pop up window upon clicking from the extension
+                            menu. 
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp1/In progress 3.png">
+                    </div>
+                </li>
+            </ol>
+            <h2>Issue Deep-Dive</h2>
+            <p>
+                The biggest issue that I ran into was the part that no matter which option does the user choose to make the decision, both decision mechanisms will run one after another. In another word, there is no outcome difference
+                when the user choose one decision mechanism over another. This is definitely a logic error because I have the correct syntax, but I had a hard time to figure out where did my logic gone wrong. The way I solved was by
+                asking for my classmate to look over my code and give me some debugging hints. Turns out that was very effective that I was overly relying on the previous constructed code for the blocker extension and did not realize 
+                that now I have two options to choose from in comparsion to one in the past. Therefore, I have implemented the code to identify which button did the user click and which specific decision making mechanism to use.
+            </p>
+            <img
+            class="list_picture"
+            src="/Images/mp1/mp1 bug.png">
+            <h2>Ideas and Future Work</h2>
+            <p>
+                Looking ahead, I wished that I could have elaborate the "option-based" decision making mechanism a bit more elaborated. For example, I was imagining to ask the user to input their specific options and store these
+                information as a list. When the system makes the decision, it will directly tell the user about the option details as they have entered instead of stating the option number. In order to do this, I need a good user 
+                interface as well that has a next button, a cancel button, and a done button. It is definitely what I will explore next before I officially submit this extension onto the Chrome extension store.
+            </p>
+            <h2>Kudos</h2>
+            <p>
+                I would love to give out the best Kudos to my classmate <strong>Andy Shaw</strong> for helping me to debug the code when I got completely stuck and gave me additional resources that he found helpful when he was first
+                learned about Javascript. These helps are very meaningful and helpful to me as I am having my first exposure to Javascript from this assignment. Additionally, I want to give the Kudos to Hannah and Rahina for all the
+                helps during classes and guidance to get started with this project!
+            </p>
+        </div>
+        <br><br><br>
+    </body>
+
+
 </html>
