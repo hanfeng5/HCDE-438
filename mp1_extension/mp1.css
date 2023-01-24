@@ -38,7 +38,7 @@ body {
     /* width: 750px; */
     width: 1200px;
     cursor: pointer;
-    object-fit:
+    object-fit: fill
     aspect-ratio: 1;
     margin-bottom: 1rem;
     margin: 1rem
