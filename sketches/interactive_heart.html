@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Hearts</title>
+        <style>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script>
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+                // background(200,180,242)
+            }
+            
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+            }
+
+            function draw() {
+                background(mouseX/4, mouseY/2, 200);
+                let xdis = 40
+                let ydis = 50
+                for (let x = 0; x < windowWidth; x+=xdis){
+                    for (let y = 0; y < windowHeight; y += ydis) {
+                    fill(mouseX-random(255),mouseY+random(255),random(255))
+                    heart(x , y, (mouseX-mouseY)+30);
+                    }
+                }
+                if (mouseIsPressed){
+                    fill(mouseX-random(255),mouseY+random(255),random(255))
+                    heart(mouseX, mouseY, 500)
+                }
+
+            }
+
+            function heart(x, y, size) {
+                beginShape();
+                vertex(x, y);
+                bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+                bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+                endShape(CLOSE);
+            }
+
+        </script>
+    </head>
+</html>

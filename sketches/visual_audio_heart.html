@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Hearts</title>
+        <style>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <meta charset="utf-8" />
+        <script>
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+                // background(200,180,242)
+            }
+            let notes = [60, 62, 64, 65, 67, 69, 71];
+
+            let oscs = [];
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+
+                osc = new p5.Oscillator();
+                osc.start();
+                osc.amp(0);
+
+                for (const note of notes) {
+                    osc = new p5.Oscillator();
+                    osc.start();
+                    osc.amp(0);
+                    oscs.push(osc);
+                }
+
+                num = random(255);
+            }
+
+            function draw() {
+                let y = windowHeight / 2
+                let heart_size = 60
+                background(180, 30 + mouseY / 3, 40+ (mouseX % 255) / 2);
+                let divider = windowWidth / 7;
+                for (let x = 0; x <= windowWidth; x += divider) {
+                    fill(num, x - divider, x + (100 % 255));
+                    if (mouseX > x && mouseX < x + divider && mouseY < y +60 && mouseY >y-60) {
+                    fill("#FF934F")
+                    heart_size = 80
+                    x = x + 10
+                    }
+                    heart(x + 40, y, heart_size);
+                    heart_size = 60
+                    if (mouseIsPressed) {
+                        for (let i = 0; i <= windowWidth; i += 30) {
+                            for (let z = 0; z <= windowHeight; z += 80) {
+                            heart(x+40,z+30,40)
+                            }
+                        }
+                    }
+                }
+            }
+
+            function playNote(osc, note) {
+                osc.freq(midiToFreq(note), 0.1);
+
+                osc.amp(0.3, 0.2);
+                // (the amptlitude to set, over the time to make changes)
+                osc.amp(0, 0.5);
+            }
+
+            function mousePressed() {
+            // Map mouse x position to the appropriate key
+                let key = floor(map(mouseX, 0, width, 0, notes.length));
+                // floor rounds the float down to the nearest integer
+                playNote(oscs[key], notes[key]);
+            }
+
+            function heart(x, y, size) {
+                beginShape();
+                vertex(x, y);
+                bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+                bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+                endShape(CLOSE);
+            }
+
+
+
+        </script>
+    </head>
+</html>

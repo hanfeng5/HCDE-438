@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Hearts</title>
+        <style>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script>
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+                background(200,180,242)
+            }
+            
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                background(200,180,242)
+            }
+
+            function draw() {
+            
+                const dim = Math.min(width, height);
+            
+                // Set up stroke and disable fill
+                strokeJoin(ROUND);
+                strokeWeight(0.8);
+                stroke(30);
+                noFill();
+                
+                // Get time in seconds
+                const time = millis() / 1000;
+                
+                // How long we want the loop to be (of one full rotation)
+                const duration = 15;
+                
+                const playhead = time / duration % 1;
+
+                // Get the rotation of a full circle
+                // *4 here so that it rotates faster and create different pattern
+                // The hearts will stop after certain rotation and new hearts
+                // connects with it
+                const rotation = playhead * PI *4;
+                
+                // Center of screen
+                const x = windowWidth / 2;
+                const y = windowHeight / 2;
+
+
+                translate(x, y);
+
+                let fill_num = 100
+                let xdis = 80
+                let ydis = 10
+                for (let x = 0; x < 200; x+=xdis){
+                    for (let y = 0; y < 200; y += ydis) {
+                    push()
+                    rotate(rotation)
+                    fill((fill_num+=1.5)*3,x%200,y%200)
+                    heart(x , y, 60)
+                    pop()
+                    }
+                }
+            
+            }
+
+            function heart(x, y, size) {
+                beginShape();
+                vertex(x, y);
+                bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+                bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+                endShape(CLOSE);
+            }
+
+        </script>
+    </head>
+</html>

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Hearts</title>
+        <style>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script>
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+                // background(200,180,242)
+            }
+
+
+            let song, analyzer
+
+            function preload() {
+                // song = loadSound('music.mp3');
+                song = loadSound('nokia_5130.mp3')
+            }
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                analyzer = new p5.Amplitude();
+
+                // Patch the input to an volume analyzer
+                analyzer.setInput(song);
+                fill(0)
+                text("Click Me!",100, 100 )
+                // song.play()
+            }
+
+            function draw() {
+
+                let rms = analyzer.getLevel();
+                let fill_num = 50
+                for (x = 0; x < windowWidth; x+=50){
+                    for (y = 0; y < windowHeight; y += 50) {
+                    fill((fill_num+=1.5)*2,x*rms%255-100, y*rms%255+50)
+                    heart(x , y, rms*600)
+                    }
+                }
+            }
+
+            function mousePressed(){
+                song.play();
+                background(255)
+            
+            }
+
+            function heart(x, y, size) {
+                beginShape();
+                vertex(x, y);
+                bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+                bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+                endShape(CLOSE);
+            }
+
+        </script>
+    </head>
+</html>

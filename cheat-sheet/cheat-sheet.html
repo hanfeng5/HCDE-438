@@ -33,6 +33,22 @@
                     <b>  font-family: 'Fredoka One', cursive;</b> -- This specifies the font that will be used within the corresponding container. The ones with "" is usually the special font that may require
                     additional installation. It is usually followed by a "basic" font to tell the website to dispaly this alternative solution if the previous desired font is not available on user's side. 
                 </li>
+                <li>
+                    <b>To make a grid-like layout: </b>
+                    .tile-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+                        /* grid-template-columns: repeat(auto-fit, 200px) 300px; */
+                        gap: 1rem;
+                </li>
+            </ul>
+            <h2>Javascript</h2>
+            <ul>
+                <li>
+                    <b>addEventListener:</b>
+                    addYesNoButton.addEventListener("click", (e) => updateContentScript(true,false));
+                    addOption.addEventListener("click", (e) => updateContentScript(false,true));
+                </li>
             </ul>
         </div>
     </body>

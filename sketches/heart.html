@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Hearts</title>
+        <style>
+            html,
+            body {
+              padding: 0;
+              margin: 0;
+              overflow: hidden;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+        <script>
+            const heart_size = 30
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                background(150,200,150)
+            }
+
+            function draw() {
+                let fill_num = 50
+                for (x = 0; x < windowWidth; x+=50){
+                    for (y = 0; y < windowHeight; y += 50) {
+                    fill((fill_num+=1.5)*3,x%200,y%200)
+                    heart(x-30 , y-30, heart_size)
+                    }
+                }
+            }
+
+            function heart(x, y, size) {
+                beginShape();
+                vertex(x, y);
+                bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+                bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+                endShape(CLOSE);
+            }
+
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+                background(150,200,150)
+            }
+
+        </script>
+    </head>
+</html>

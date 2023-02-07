@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="mp2.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+    </head>
+    <nav>
+        <a href="/index.html">Projects</a>
+        <a href="/bio/bio.html">About</a>
+        <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
+        <a href="/writeup/writeup.html">Writeup</a>
+    </nav>
+
+    <body>
+        <div class="recipe-container">
+            <h1>P5 Sketches with Creative Code</h1>
+            <h2>Overview and Usage</h2>
+            <p>
+                With this porject, I have made creative code in the p5.js library to generate different graph patterns and styles within the topic of "heart". Each individual graphs has their own uniqueness
+                based on the title, just like the "sound heart" will change sizes based on the music rythms, and "interactive heart" will change size based on the user's interaction. Everything is linked to the
+                <a href="/P5_sketch/p5_sketch.html">P5 Sketch Gallery</a> where you can click into the individual projects and have an immersive experience with these creative designs.
+                <div>
+                    <img
+                    class="list_picture_big"
+                    src="/Images/mp2/mp2 homepage.gif">
+                    <div class="image-title">Preview of the project sketch homepage</div>
+                </div>
+                <br>
+            </p>
+            <h2>Development Process</h2>
+            <ol>
+                <li>
+                    <div>
+                        <p>
+                            First, I have read through all the project requirement to create individual sketches. Then, I have also read through some documentations for P5.js and familiarized myself for the syntax to
+                            code in the P5 environement. This first step took me a while to get started because I was experimenting different draw feature and getting started with more advanced coding.
+                        </p>
+                        <!-- <img
+                        class="list_picture"
+                        src="/Images/mp1/In progress 0.png"> -->
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            After I have a basic understanding to the P5 framework, it is time to make some creative sketches and experiement with different options! The first step was to figure out how to draw an individual
+                            heart with P5, which I have looked at some examples and tried to recreate the heart shape to my standard.This is where I started to read through the examples
+                            offered on P5 tutorials and try to expand on the existing simple functions. I have been following the same process for each of the six graphs: read examples, try to implement the method
+                            in my own code and adapt to make the graphs looks cool, and try to experiement if I can make additional cool effect. Turns out, I have made a lot of unexpected graphs based on this experiement,
+                            and I love to see that I am learning the drawing command with hands-on experiement.
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp2/mp2 in progress 1.png">
+                        <div class="image-title">A failed experiement when incorporting dynamic line drawings with the random heart positions, it makes the graph unnecessarily messy</div>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp2/mp2 in progress 2.png">
+                        <div class="image-title">A successful experiement when incorporting rotating effect with the object and draw along the pathway. The unexpected 3D effect turned out very cool </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Finally, after I have made all the graphs together, I have implemented the gallery page to store these wonderful sketches. This took longer than usual becuase I was trying to play around the
+                            "grid" format and doing research about how to transfer P5.js codes into a html format so that the user can simply click on the picture in the gallery and interact with the graphs directly without
+                            going to my P5 library. I have also made previews about the gallery page where there will be a preview image, either a static or a gif preview, to indicate the sketch effect as soon as the
+                            user open the gallery page. Additionally, the gallery will change layout based on user's browser window size, and I tried to make the graphs looks evenly spread out into two rows with bigger
+                            screen size since I have six graphs to present. 
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp2/mp2 homepage.png">
+                    </div>
+                </li>
+            </ol>
+            <h2>Issue Deep-Dive</h2>
+            <p>
+                One of the issue I have ran into was to successfully load the mp3 file into my "sound heart" code to make cool effect when the music is playing. I have tried to follow the steps and tutorials on the P5
+                example websites, but all the example code do not load my mp3 file correctly and my code will always stuck at the loading screen without drawing anything at all. Turns out, the keyword "assets" is not needed
+                on line 4 when I am loading the mp3 file, since the mp3 file lives under the same directory of my sketch.js code. By removing the assets keyword, my code runs perfectly and the music will play after the mouse
+                is clicked.
+            </p>
+            <img
+            class="list_picture"
+            src="/Images/mp2/mp2 bug.png">
+            <div class="image-title">An issue encountered when loading the mp3 file for "sound heart" code and there is no output or music played after the code is running</div>
+            <h2>Ideas and Future Work</h2>
+            <p>
+                Looking ahead, I want to make more interesting sketches that involve more advanced looping and functions. Since I am getting more and more comfortable to create in the P5 space, I want to make more
+                animated graphs that takes more user input to create different effect. Under the time constraint and the amount of content that I need to learn on my own, I did not implemented the fanciest effect or the
+                fanciest pattern but re-using the heart pattern. Therefore, one of the future step could be going out of the comfort zone to explore different skecthes that I can make with all the fancy functions
+                built into P5.js
+            </p>
+            <h2>Kudos</h2>
+            <p>
+                To learn about how to make a heart pattern, I have referred to the code incorporated by <a href="https://editor.p5js.org/Mithru/sketches/Hk1N1mMQg">Minh's p5 sketch</a> and tweaked a bit to fit my code.
+                From this code, I have also started to understand the for loops better in P5 to draw patterns and pushed me to implement my own for loops in the later sketches. Additionally,
+                I would love to shout out to Hannah for the discord help to resolve my mp3 file loading problem! I have also referred to the examples provided by Hannah to correctly implement my sketch gallery with proper
+                CSS styling! Thank you for the amazing resources, Hannah! 
+            </p>
+        </div>
+        <br><br><br>
+    </body>
+
+
+</html>
