@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="mp3.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+    </head>
+    <nav>
+        <a href="/index.html">Projects</a>
+        <a href="/bio/bio.html">About</a>
+        <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
+        <a href="/writeup/writeup.html">Writeup</a>
+    </nav>
+
+    <body>
+        <div class="recipe-container">
+            <h1>P5 Games "Avoid That!"</h1>
+            <h2>Overview and Usage</h2>
+            <p>
+                This project inovles using P5.js and P5.play to develop a simple interactive game that users can play from their web browsers. Players will be a 
+                small rectangular box at the bottom of the screen and the goal is to use the arrow key to move around the box to avoid the obstacle falling from the sky. This is a survival
+                game that the player should try to last as long as possible in this game. This game is build with <a href = "https://p5js.org">P5.js</a> and <a href = "https://p5play.org">P5.play</a> libraries, and please feel free
+                to learn more about the libraryies! <br><br>
+
+                To play the game, simply click on the gif down below, or you can play it through this <a href = "https://hanfeng5.github.io/p5_game/">link</a>
+                <div>
+                    <a href="https://hanfeng5.github.io/p5_game/">
+                        <img
+                        class="list_picture_big"
+                        src="/Images/mp3/mp3 demo.gif">
+                        <div class="image-title">Preview of the game "Avoid That!"</div>
+                    </a>
+                </div>
+                <br>
+            </p>
+            <h2>Development Process</h2>
+            <ol>
+                <li>
+                    <div>
+                        <p>
+                            First, I have been doing reading through tutorials about how to make different sprites and create groups of sprites as the ground blocks for the game. Initially, the
+                            game was just a screen of sprite columns becuase I want to start by practicing how to make the simplest item in the game.  
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp3/column sprites.png"/>
+                        <div class="image-title">A column of sprites as the first step</div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Then, I started to play around how can I manupate the sprites location and the amount in order to create the obstacle feeling. By surprise, I have been playing around the createSprite() method
+                            and plugging into different numbers as experiments. Then, I have realized that if I do not follow the strict formula to connect sprites into a column, there will be a overloading effect that
+                            sprites are not normally organized into a linear form, and this looks like an "explosive effect". Therefore, I have decided to move this effect up on the top of the screen to potentially create a falling effect.
+                            One suggestion that I have received from my peer was that I should create three sprung point to create the obstacle instead of one, becuase this will fill the white spaces a bit better and give player
+                            some challenges to continue playing the game. With some calculation, I have identified three sprung points that are equally spread out from the player's browser window.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Then, I have figured out how to add gravity and velocity to the sprites in order to create the falling effect. To make the game a bit harder for the users, I have made the sprites falling 
+                            at random speed so that the users have to avoid the obstacle strategically. Additionally, I have added the feature that more obstacles will be added after 8 seconds if the game is still ongoing, and
+                            this is to increase the diffculty level for the player to stay alive.
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp3/mp3 demo3.gif"/>
+                        <div class="image-title">Explode at three spots</div>
+                        <img
+                        class="list_picture"
+                        src="/Images/mp3/mp3 demo 2.gif"/>
+                        <div class="image-title">Re-explode effect</div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Finally, I have been spending most of the time to figure out how to use the keyboard to move the player sprite that I have created and how to end the game properly when the player sprite is overlapped with obstacles. My goal is to
+                            allow user to move "diagonally" if they hold down two direction key at the same time, such as up and left arrow will allow user to move diagonally towards the top left. I have been looking at different YouTube videos for the answer. Then,
+                            I have also been debugging about how to end the game promptly when the player "hit" one of the obstacle and provide an information that displays the highest score. My classmates have been helping me a lot in this debugging process. Finally, I have
+                            made a version that I am generally happy about.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+            <h2>Issue Deep-Dive</h2>
+            <p>
+                One issue that took me a while to figure out is identifying when did the player hit the obstacle, with the .overlap() method, which means it should result into the "game over" screen. However, there was no such behavior when 
+                the player hits the obstacle and the two blocks will simply overlap with each other. Later on, under the help with my classmates, I have added another varible called "gameOver" to update the status of if the player
+                loses the game and that will be the boolean check to identify if the console should end the game now. Additionally, my classmates have pointed out that in Javascript, boolean indicator DO NOT start with captalized letter, which means
+                I should have written "gameOver = true" instead of "True". With these fixes, my code eventually start to behave almost correctly when the player hits the obstacle, and the rest of the problem was simply
+                adjusting the position of the text and background colors. 
+            </p>
+            <img
+            class="list_picture"
+            src="/Images/mp3/mp3 bug.png">
+            <div class="image-title">An issue encountered when trying to detect if the player hit the obstacle</div>
+            <h2>Ideas and Future Work</h2>
+            <p>
+                Looking ahead, I definitley want to make a higher fidelity game with more libraries. If I decide to extneding on this particular game, I want to add other features, such as mutiple lives before the final game over
+                and special items to replenish player's health. Additionally, there can be additional levels or goals for each round by going beyond than a simple survial game. I also want to explore a bit more resources other than P5 and P5 play, as
+                I wish I can explore more coding within Javascript rather than the P5 environment. I believe that coding in Javascript would be a bit more challenging than the P5 environment, but it is one of the future ideas that I have after coding out my
+                first game. 
+            </p>
+            <h2>Kudos</h2>
+            <p>
+                I have used a lot of resources for this assignment. First, I have followed <a href ="https://workshops.hackclub.com/platformer/">this tutorial</a> to build the basic functionality and design of the game. Then, I have followed 
+                <a href ="https://www.youtube.com/watch?v=MA_aFQV9vss">this youtube video</a> to better understand how to give player sufficient keyboard control to move around in the game. Finally, I want to give kudo shoutout to my classmate
+                Ryan Bautista for giving me suggestions on laying out the game interface and small debugging help, Andy Shaw for helping me deploy my game onto the Github page becuase it has been a very stressful experience when I could only stare at the 
+                empty white screen on the github page but everything was working fine locally, and Katie Hancock for coming to my apartment and help me to debug why my game is not ending properly even though I have tried to follow the tutorials. Other than a lot of my other classmates, I have
+                decided to write my code from scratch by myself instead of building off from an existing game code, which is why that I have ran into a lot of issues and learned every command by myself. Without these trenmedous support, I will not be able to complete this
+                project successfully and smoothly.
+            </p>
+        </div>
+        <br><br><br>
+    </body>
+</html>
