@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="fp0.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<nav>
+    <a href="/index.html">Projects</a>
+    <a href="/bio/bio.html">About</a>
+    <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
+    <a href="/writeup/writeup.html">Writeup</a>
+</nav>
+<body>
+    <div class="recipe-container">
+        <h1>FP0 - Final Project Proposal</h1>
+        <h2>Description</h2>
+        <p>
+            This project is intented to be a schedule planner to help the user to plan out their calendar commitments and to-dos better for each day/week
+            to reach a higher producitivty and organized schedule.
+        </p>
+        <img
+        class="list_picture"
+        src="/Images/fp0/Fp0 1.webp"/>
+        <div class="image-title"><a href="https://www.timecamp.com/blog/2021/01/daily-schedule-template-ideas/">A sample schedule planner</a></div>
+        <h2>Tools reuqired</h2>
+        <p>
+            <ul>
+                <li>Node.js</li>
+                <li>React</li>
+                <li>Potentially Electron</li>
+            </ul>
+        </p>
+        <h2>Versions of Prototype</h2>
+        <p>For the project, I have broken the deliverable into two versions with the intial woring prototype and the refined final
+            deliveable. 
+        </p>
+        <h3>Prototype Version</h3>
+        <p>
+            In this verison, the user can simply add their to-do list for the day. The user can add contents to the daily to-do list and able to mark it as done to delete the to do item.
+            The system will keep track of these data so that user can click the plus button at the bottom of the page to append one item to the list.
+        </p>
+        <img
+        class="list_picture"
+        src="/Images/fp0/FP0 Prototype4.jpg"/>
+        <h3>Final Version</h3>
+        <p>
+            This version consist of the single day schedule planner but spread out to multiple days of the week. The user can assign different to do for the next one week. Therefore,
+            the system will be tracking of user's current day of the week and populate spaces for one week's to-do inputs. 
+        </p>
+        <img
+        class="list_picture"
+        src="/Images/fp0/FP0 Prototype3.jpg"/>
+        <h2>Proposed Development Process</h2>
+        <ol>
+            <li>Do the background research about React and understand what are the components/command needed to create the basic functionality.</li>
+            <li>Start to build the basic to-do list. The user should be able to write in their own to-do content, add additional to-do items, or mark it as done. </li>
+            <p><b>----- MILESTONE #1 ----- </b></p>
+            <li>Then, add additional functionality that the user can put additional to-do items for other days of the week. It should apply the same concept of single day
+                to do list but under different days of the week.
+            </li>
+            <li>Try to figure out how to save the changes to the schedule and save the progress for the to-list so that the user can check back later with certain authentication mechanism.</li>
+            <p><b>----- MILESTONE #2 ----- </b></p>
+            <li>Improve the user interface and imrpove the styles to make the page aesthetically pleasing!</li>
+            <p><b>----- FINAL DELIVERABLE ----- </b></p>
+        </ol>
+        <h2>Known and Unknowns</h2>
+        <p>
+            <b>Known:</b> I have alreayd leanred the basic logistics for Javascript, HTML, and CSS. I have also interacted with the basic program development with npm. 
+            This includes the local development server, the build tool, and a deployment tool. 
+        </p>
+        <p>
+            <b>Unknowns:</b> The biggest unknown is how to use the React library to create interfaces. I have never used React before which means that I need to learn about the syntax
+            and the functionality of different command. Then, I need to figure out a way to layout the page into different blocks so that different parts of the page is running different javascript code potentially.
+            This is different from the typical top to down page layout that information shows up in a large column, my deliverable has different functionality at various location on the page. I also need to figure out
+            how to save the user data so that they can return to their progress later.
+        </p>
+        <h2>Stretch Goals</h2>
+        <p>
+            Essentailly, I want to add account authentications so that user can sign in with their Google account and potentially store the data into their account. Potentially, my schedule planner can
+            automatically sync up the commiments from user's Google calendar and import it into the to-do list. This is a very big stretch goal and I may move some of the previous expected functionality into the
+            stretch goal section if the progress turned out to be overly challenging than I have anticipated.
+        </p>
+        <img
+        class="list_picture"
+        src="/Images/fp0/FP0 Prototype2.jpg" />
+        <div class="image-title">A potential interface after the stretch goals</div>
+    </div>
+    <br>
+</body>
+</html>
