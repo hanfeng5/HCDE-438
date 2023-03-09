@@ -50,65 +50,80 @@
                     <div>
                         <p>
                             Then, I started the actual implementation process. And this is the longest step in this project process becuase I have no prior experiences with React and 
-                            I am still getting familiarzed with Javascript syntax. Then, I have been following the MDN Tutorial
+                            I am still getting familiarzed with Javascript syntax. Then, I have been following the <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started">MDN Tutorial</a>
+                            to get started with the "to-do-planner" implementation and the baic React environment set up to render a simple to-do planner interface. At this step, I am not yet looking to add/remove to do list or having any concrete
+                            functionality yet but rather setting up the back end of the program. Most of the code and user interface were handled inside the App.py function and mostly written out with hard coded HTMl contents.
                         </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/Initial.jpg"/>
+                        <div class="image-title">Interface only without functionality</div>
+                        <br>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/fp1 1.png"/>
+                        <div class="image-title">A hard coded list of to-do items</div>
                     </div>
                 </li>
                 <li>
                     <div>
                         <p>
-                            Then, I have figured out how to add gravity and velocity to the sprites in order to create the falling effect. To make the game a bit harder for the users, I have made the sprites falling 
-                            at random speed so that the users have to avoid the obstacle strategically. Additionally, I have added the feature that more obstacles will be added after 8 seconds if the game is still ongoing, and
-                            this is to increase the diffculty level for the player to stay alive.
+                            Finally, I have put in a lot of time to fix the actual to-do list functionality. For this prototype, I have only been mostly focused on adding and deleting the task and keep track of how many tasks are remained inside the list. 
+                            To complete this step, I have been reading a lot about passing around "props" around different files and how to modify the list of tasks through different built in functions, such as "useState", ".filter()" methods and so on. 
+                            Finally, I have succesffully manuplated the list of task and make them display in the user interface while tracking how many tasks is remained in the list.
                         </p>
                         <img
                         class="list_picture"
-                        src="/Images/mp3/mp3 demo3.gif"/>
-                        <div class="image-title">Explode at three spots</div>
+                        src="/Images/fp1 prototype/delete_task.gif"/>
+                        <div class="image-title">Deleting tasks with the tasks counter</div>
+                        <br>
                         <img
                         class="list_picture"
-                        src="/Images/mp3/mp3 demo 2.gif"/>
-                        <div class="image-title">Re-explode effect</div>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <p>
-                            Finally, I have been spending most of the time to figure out how to use the keyboard to move the player sprite that I have created and how to end the game properly when the player sprite is overlapped with obstacles. My goal is to
-                            allow user to move "diagonally" if they hold down two direction key at the same time, such as up and left arrow will allow user to move diagonally towards the top left. I have been looking at different YouTube videos for the answer. Then,
-                            I have also been debugging about how to end the game promptly when the player "hit" one of the obstacle and provide an information that displays the highest score. My classmates have been helping me a lot in this debugging process. Finally, I have
-                            made a version that I am generally happy about.
-                        </p>
+                        src="/Images/fp1 prototype/fp1 2.png"/>
+                        <div class="image-title">When the task list is empty</div>
                     </div>
                 </li>
             </ol>
             <h2>Issue Deep-Dive</h2>
             <p>
-                One issue that took me a while to figure out is identifying when did the player hit the obstacle, with the .overlap() method, which means it should result into the "game over" screen. However, there was no such behavior when 
-                the player hits the obstacle and the two blocks will simply overlap with each other. Later on, under the help with my classmates, I have added another varible called "gameOver" to update the status of if the player
-                loses the game and that will be the boolean check to identify if the console should end the game now. Additionally, my classmates have pointed out that in Javascript, boolean indicator DO NOT start with captalized letter, which means
-                I should have written "gameOver = true" instead of "True". With these fixes, my code eventually start to behave almost correctly when the player hits the obstacle, and the rest of the problem was simply
-                adjusting the position of the text and background colors. 
+                One issue happened when I was attemtping to use the "useState" function within React to change the state of the variable and pass it into a function to change the original value of the variable.
+                When I was reading about this function, I wanted to pair it with another "function" so that the program will add the task when the user hit the "add" button on the to-do list. However, when I wrote out the function,
+                I have been constantly getting the error of scope not found. I have gotten some help from Hannah and understand the "class" and "function" logic within Javascript. I was very used to other coding languages where a function, or a method,
+                is exclusive to itslef with the return statement to end the method. However, instead of writing the component files with the "class" keyword and extend the React library, we can write the object as a large function. Then, there can be 
+                sub functions inside so that other variables can access to the scope. 
             </p>
             <img
             class="list_picture"
-            src="/Images/mp3/mp3 bug.png">
-            <div class="image-title">An issue encountered when trying to detect if the player hit the obstacle</div>
+            src="/Images/fp1 prototype/Issue screenshot.png">
+            <div class="image-title">The fixed code with sub functions defined under the object function</div>
+            <h2>Additional Project Clarifaction</h2>
+            <p>
+                <strong>Project Scope:</strong> The biggest scope change is that I will not be able to implement any sync feature in my final deliverable as user log into their calendar account. For now,
+                I am trying to make sure the to-do planner has all the basic functionality and user centered control for a virtual planner. My biggest challenge in the final deliverable scope is to figure out a way
+                for the website to remember the user's input even after user have closed the browser window or refreshed the page. 
+                <br><br>
+                <strong>Time Management:</strong> This project has been taking longe than I expected since I have been spending most the time to understand the logistics of React and how to use different functions within Javascript. However, the time and efforts
+                are still manageable as I have been trying to only utilize aspects that are relevant to this project and temporarily skipped the details of a few functions for React. The biggest setbacks is that I do not understand some syntax and code
+                in the tutorials, which means that I had to Google these code and read the documentation of what does the syntax mean within Javascript or React. 
+                <br><br>
+                <strong>Implementation Plan:</strong> My implementation plan has changed a bit since the project scope has changed. Becuase I will not be implmeneting the account syncing function and I have realized that there are a lot of new syntax I need to
+                learn within React and Javascript, I will shift my focus to complete the basic functionality of this virtual to-do planner. Quality over quantity. Please refer to
+                <strong>Ideas and Future Work</strong> section down below for more details regarding my future implementation plan.
+            </p>
             <h2>Ideas and Future Work</h2>
             <p>
-                Looking ahead, I definitley want to make a higher fidelity game with more libraries. If I decide to extneding on this particular game, I want to add other features, such as mutiple lives before the final game over
-                and special items to replenish player's health. Additionally, there can be additional levels or goals for each round by going beyond than a simple survial game. I also want to explore a bit more resources other than P5 and P5 play, as
-                I wish I can explore more coding within Javascript rather than the P5 environment. I believe that coding in Javascript would be a bit more challenging than the P5 environment, but it is one of the future ideas that I have after coding out my
-                first game. 
+                Looking ahead, I definitley want add in additional functionality within the to-do planner. For example, some top priority functionality includes editing the existing task and save the to-do list
+                for a later use so that the user do not lose their to-do list once they close the window or refresh the page. This memory functionality will takes me more time to do researches and potentially use authentication
+                mechanism so that it is stored to the user's account. Additionally, I want to gather some inputs from my colleagues about how to properly handle the check box for each task. For now, the user can toggle the check box and send in
+                proper state information in the back end but nothing happens in the user interface. I want to explore how can I implement these checkbox so that it will be more benefical for the user in addition to the delete button.
             </p>
             <h2>Kudos</h2>
             <p>
-                I have used a lot of resources for this assignment. First, I have followed <a href ="https://workshops.hackclub.com/platformer/">this tutorial</a> to build the basic functionality and design of the game. Then, I have followed 
-                <a href ="https://www.youtube.com/watch?v=MA_aFQV9vss">this youtube video</a> to better understand how to give player sufficient keyboard control to move around in the game. Finally, I want to give kudo shoutout to my classmate
-                Ryan Bautista for giving me suggestions on laying out the game interface and small debugging help, Andy Shaw for helping me deploy my game onto the Github page becuase it has been a very stressful experience when I could only stare at the 
-                empty white screen on the github page but everything was working fine locally, and Katie Hancock for coming to my apartment and help me to debug why my game is not ending properly even though I have tried to follow the tutorials. Other than a lot of my other classmates, I have
-                decided to write my code from scratch by myself instead of building off from an existing game code, which is why that I have ran into a lot of issues and learned every command by myself. Without these trenmedous support, I will not be able to complete this
-                project successfully and smoothly.
+                I have used a lot of resources for this assignment. For most of the project, I have been following this <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started">MDN Tutorial</a>
+                to get started and push through the logistics of building a to-do planner in React. From there, I have also developed some unique functionality based on the starter code and the code snippets from the tutorial. This
+                tutorial is extremely helpful for me to explore React and learn about the logics to pass around different components, and that is how I can further implement the functionality after I have understand the logics and syntaxs. 
+                <br>
+                Additionally, I would love to thank my peer Frannie Ello, Andy Shaw, and Ryan Bautista for the debugging helps. Also, thank you Hannah for discussing with me about React and clarify the logistics or React during class. 
             </p>
         </div>
         <br><br><br>
