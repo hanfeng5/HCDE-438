@@ -1,13 +1,22 @@
 .picture {
-  width: 300px;
+  /* width: 300px; */
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
   aspect-ratio: 1;
+  display: flex;
+  width: 50%;
+  max-width: 100%;
+}
+
+.content {
+  width: auto;
+  margin: auto;
+  border-radius: 30%;
 }
 
 .bio-container {
   display: flex;
-  width: 80%;
+  width: auto;
   margin: auto;
   margin-top: 5rem;
   gap: 12px;
@@ -15,12 +24,14 @@
 
 h1,h2,h3,h4 {
   font-family: 'Fredoka One', cursive;
+  border-radius: 10px
 }
 
 body {
   background-color: antiquewhite;;
   font-family: "Open Sans", Helvetica, sans-serif;
   color: black;
+  border-radius: 10px
 }
 
 nav {

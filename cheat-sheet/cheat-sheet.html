@@ -5,6 +5,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/favicon_io/site.webmanifest">
+    
         <title>Cheat Sheet</title>
     </head>
     <nav>
@@ -41,6 +46,20 @@
                         /* grid-template-columns: repeat(auto-fit, 200px) 300px; */
                         gap: 1rem;
                 </li>
+                <li>
+                    <b>To make the picture adpative to the screen size</b>
+                    .list_picture{
+                        width: auto;
+                        max-width: 100%;
+                        height: auto;
+                        display: flex;
+                        aspect-ratio: 1;
+                        margin-bottom: 1rem;
+                        margin: 1rem;
+                        object-fit: contain;
+                      }
+                    the key is to set the width to auto and set the maximum width to 100 percent so that it will not over stretch the picture
+                </li>
             </ul>
             <h2>Javascript</h2>
             <ul>
@@ -48,6 +67,38 @@
                     <b>addEventListener:</b>
                     addYesNoButton.addEventListener("click", (e) => updateContentScript(true,false));
                     addOption.addEventListener("click", (e) => updateContentScript(false,true));
+                </li>
+                <li>
+                    <b>the .map function that will return a new data structure:</b>
+                    function toggleTaskComplete(id) {
+                        const updatedTasks = tasks.map ((task) => {
+                          if (id === task.id) {
+                            return {...task, completed : !task.completed}
+                          }
+                          // console.log(remaining)
+                          return task;
+                        })
+                        setTask(updatedTasks);
+                      }
+                </li>
+                <li>
+                    <b>the forEach method will perform the task on each individual instances:</b>
+                    function countComplete () {
+                        remaining = 0;
+                        tasks.forEach(task => {
+                         if (!task.completed) {
+                           remaining += 1;
+                         }
+                        })
+                        return remaining;
+                     
+                     }
+                </li>
+                <li>
+                    <b>A conditional statement:</b>
+                    const task_noun = task_number !== 1 && task_number !==0? "tasks" : "task"
+                    This line is saying about assign the constant task_noun to different value based on the condition. If task number is not equal to
+                    1 and task number is not equal to 0, go ahead and assign the value as "tasks". Otherwise, assign the value as "task". 
                 </li>
             </ul>
         </div>

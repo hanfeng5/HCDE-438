@@ -26,22 +26,28 @@ body {
   } */
 
   .list_picture{
-    width: 750px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
     cursor: pointer;
-    object-fit: 
+    display: flex;
     aspect-ratio: 1;
     margin-bottom: 1rem;
-    margin: 1rem
+    margin: 1rem;
+    /* background-size: contain; */
+    object-fit: contain;
   }
 
   .list_picture_big{
     /* width: 750px; */
-    width: 1200px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
     cursor: pointer;
-    object-fit: fill
     aspect-ratio: 1;
     margin-bottom: 1rem;
-    margin: 1rem
+    margin: 1rem;
+    object-fit: contain;
   }
 
   h1{

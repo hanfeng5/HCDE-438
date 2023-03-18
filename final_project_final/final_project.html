@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/final_project_final/final_project.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/favicon_io/site.webmanifest">
+    
+        <meta charset="UTF-8">
+    </head>
+    <nav>
+        <a href="/index.html">Projects</a>
+        <a href="/bio/bio.html">About</a>
+        <a href="/cheat-sheet/cheat-sheet.html">Cheat Sheet</a>
+        <a href="/writeup/writeup.html">Writeup</a>
+    </nav>
+
+    <body>
+        <div class="recipe-container">
+            <h1>Final Project! To-Do Planner</h1>
+            <h2>Overview and Usage</h2>
+            <p>
+                This to-do planner is a implementation of the paper planner/to-do list but the user can simply keep track of their daily commitments on through this website. This to-do 
+                planner is built with "React" framework and currently achieve the basic functionality. The users can add new to-do items in the input box which will be queued at the end of the list,
+                and the user can delete the task or toggle the checkbox to mark the task as done. Based on the amount of the remaining tasks, the website will remind users
+                how many remaining tasks are left inside the to-do list. The user can also edit the existing task name if they desire. <br><br>
+
+                To experience this virtual to-do planner, you may access it from <a href = "https://hanfeng5.github.io/To-do-planner/">To-Do-Planner</a>
+                <div>
+                    <a href="https://hanfeng5.github.io/To-do-planner/">
+                        <img
+                        class="list_picture_big"
+                        src="/Images/final project/Mark as done.gif"
+                        alt="A gif demonstrating checking boxes in front of the task bring down the task reamaining number. When the user deleted all the text, the text Good job all done shows up in the middle of the screen">
+                        <div class="image-title">Preview of the To-Do Planner</div>
+                    </a>
+                </div>
+                <br>
+            </p>
+            <h2>Development Process</h2>
+            <h3>Step 1-3 was mentioned completed in the <a href = "/final_project_prototype/fp_prototype.html">To-Do-Planner Prototype</a></h3>
+            <ol>
+                <li>
+                    <div>
+                        <p>
+                            First, I have spent a lot of time to understand the React framework. I decided to experiment with the React framework because I want to be familiar with an additional tool besides the basic
+                            Javascript. I have read through a lot of the command lines and tutorial on the <a href="https://reactjs.org">React offical webstie</a> and figuring out what are the tools I needed for this project.
+                            This is also where I have established the React environmenmt by using the command <strong>"npx create-react-app to-do-planner" </strong>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Then, I started the actual implementation process. And this is the longest step in this project process becuase I have no prior experiences with React and 
+                            I am still getting familiarzed with Javascript syntax. Then, I have been following the <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started">MDN Tutorial</a>
+                            to get started with the "to-do-planner" implementation and the baic React environment set up to render a simple to-do planner interface. At this step, I am not yet looking to add/remove to do list or having any concrete
+                            functionality yet but rather setting up the back end of the program. Most of the code and user interface were handled inside the App.py function and mostly written out with hard coded HTMl contents.
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/Initial.jpg"/
+                        alt="a photo of the laptop screen, with the user interface and the console on the other side of the screen. ">
+                        <div class="image-title">Interface only without functionality</div>
+                        <br>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/fp1 1.png"
+                        alt="A picture of the user interface of the to do list. With the input box at the top of the screen, add button underneath, three button that says all, and a to do list with the title of the task, a check box in front of it, one edit button and red delete button down below"/>
+                        <div class="image-title">A hard coded list of to-do items</div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>
+                            Finally, I have put in a lot of time to fix the actual to-do list functionality. For this prototype, I have only been mostly focused on adding and deleting the task and keep track of how many tasks are remained inside the list. 
+                            To complete this step, I have been reading a lot about passing around "props" around different files and how to modify the list of tasks through different built in functions, such as "useState", ".filter()" methods and so on. 
+                            Finally, I have succesffully manuplated the list of task and make them display in the user interface while tracking how many tasks is remained in the list.
+                        </p>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/delete_task.gif"
+                        alt="A gif showing the user delete the task and the task remaining number also decreased"/>
+                        <div class="image-title">Deleting tasks with the tasks counter</div>
+                        <br>
+                        <img
+                        class="list_picture"
+                        src="/Images/fp1 prototype/fp1 2.png"
+                        alt="A picture showing all the task are done and the word Good Job AllDone shows in the middle of the page"/>
+                        <div class="image-title">When the task list is empty</div>
+                    </div>
+                </li>
+                <li>
+                    <p>
+                        Then, I have listened to my colleague's suggestion to modify the the task reamining number upon checking the checkbox in front of each list. When the user check the check box, the program will see it as "done" without deleting the task.
+                        I have tried to experiment with multiple ways to deal with this behavior, espeially re-create some of the function logics in order to track the correct amount of tasks being done. 
+                    </p>
+                    <img
+                        class="list_picture"
+                        src="/Images/final project/Mark as done.gif"
+                        alt="A gif showing the the task remaining number decreased after the user check the checkbox or delete the task"/>
+                        <div class="image-title">Marking the task as done by checking or deleting the task</div>
+                </li>
+                <li>
+                    <p>
+                        Finally, I have implemented the edit feature so that the user can edit task name instead of deleting and re-adding the task. I have been following the MDN tutorials for the basic coding logics and added some
+                        additional personalized code to achieve the feature of editing the task. Ultimately, I have been using the two sets of template for each to-do item in the tasklist. If the user have selected to edit, one of the boolean
+                        variable will become true to show the editing interface. Again,this is similiar to the previous step where I have been experiementing about how to pass around the props to make the changes from the user interface but also change the state
+                        in the backend so that the tasklist will also get updated. 
+                    </p>
+                    <img
+                        class="list_picture"
+                        src="/Images/final project/edit task.gif"
+                        alt="A gif showing the user clicking on the edit button to summon an input box with the title what would you like to get done now "/>
+                        <div class="image-title">Editing task</div>
+                </li>
+            </ol>
+            <h2>Issue Deep-Dive</h2>
+            <p>
+                One of the biggest issue during this stage is to figure out how to manipulate the task remaining number when the user checking and unchecking the checkbox without deleting the task. The old logic was to
+                check how many task remains in the tasklist and the task remaining is simply the length of the task list. However, this method does not work anymore because the number should go down without deleting the task itself.
+                After experimenting with all kinds of variable, I have thought about checking how many task are considered as "completed" becuase I have already developed the method to change the complete state to the opposite when the user interact with the checkbox. 
+                The hardest part is to pass this variable into a global scope and write out the condition based on the state changes to each individual task inside the tasklist. Finally, I have came up with the proper solution. Although I know it is not the moost efficient solution
+                with the hard coded for loop, it does the job for a simple to-do planner. 
+            </p>
+            <img
+            class="list_picture"
+            src="/Images/final project/issue 1.png"
+            alt="A code snippet that illlustrates the details of function countComplete"/>
+            <div class="image-title">The code for the new method to count how many tasks are completed</div>
+            <img
+            class="list_picture"
+            src="/Images/final project/issue2.png"
+            alt="A code snippet that illlustrates how different global variable were changed to produce the correct result"/>
+            <div class="image-title">The code for modifying the global variable to produce correct count result</div>
+            <!-- <h2>Additional Project Clarifaction</h2>
+            <p>
+                <strong>Project Scope:</strong> The biggest scope change is that I will not be able to implement any sync feature in my final deliverable as user log into their calendar account. For now,
+                I am trying to make sure the to-do planner has all the basic functionality and user centered control for a virtual planner. My biggest challenge in the final deliverable scope is to figure out a way
+                for the website to remember the user's input even after user have closed the browser window or refreshed the page. As the final deliverable, I 
+                <br><br>
+                <strong>Time Management:</strong> This project has been taking longe than I expected since I have been spending most the time to understand the logistics of React and how to use different functions within Javascript. However, the time and efforts
+                are still manageable as I have been trying to only utilize aspects that are relevant to this project and temporarily skipped the details of a few functions for React. The biggest setbacks is that I do not understand some syntax and code
+                in the tutorials, which means that I had to Google these code and read the documentation of what does the syntax mean within Javascript or React. 
+                <br><br>
+                <strong>Implementation Plan:</strong> My implementation plan has changed a bit since the project scope has changed. Becuase I will not be implmeneting the account syncing function and I have realized that there are a lot of new syntax I need to
+                learn within React and Javascript, I will shift my focus to complete the basic functionality of this virtual to-do planner. Quality over quantity. Please refer to
+                <strong>Ideas and Future Work</strong> section down below for more details regarding my future implementation plan.
+            </p> -->
+            <h2>Ideas and Future Work</h2>
+            <p>
+                Looking ahead, the first thing I wanted to do is to implement a sign-in page for user authentication. It was a stretch goal for the project and I have been trying to bring in Fireabse authentication into the app, there are a lot of
+                nuances that I did not expect to work with React environemnt and the implementation is outside of the time constraint. Therefore, I want to allow user to sign into their Google or email account so that the information is stored with their account.
+                In this case, the user will not lose their to-do data when they refresh the page or come back to the page at a later time. The most ambitious goal is to utilize these user authentication and automatically sync up the calendar invite into the to-do planner. In this case,
+                the user can simply add and delete items directly connected to their clalendar. 
+            </p>
+            <h2>Kudos</h2>
+            <p>
+                I have used a lot of resources for this assignment. For most of the project, I have been following this <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started">MDN Tutorial</a>
+                to get started and push through the logistics of building a to-do planner in React. From there, I have also developed some unique functionality based on the starter code and the code snippets from the tutorial. This
+                tutorial is extremely helpful for me to explore React and learn about the logics to pass around different components, and that is how I can further implement the functionality after I have understand the logics and syntaxs. 
+                <br>
+                Additionally, I would love to thank my peer Frannie Ello, Andy Shaw, Ryan Bautista, and Alfie Aguilar Vidrio for the debugging helps and providing me insights to improve my project. Also, thank you Hannah for discussing with me about React and clarify the logistics or React during class. 
+            </p>
+        </div>
+        <br><br><br>
+    </body>
+</html>
